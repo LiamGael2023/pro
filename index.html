@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de Administración Moderno">
+    <title>Dashboard Admin | Panel de Control</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span class="logo-text">AdminPro</span>
+            </div>
+            <button class="toggle-btn" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="nav-text">Analíticas</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span class="nav-text">Usuarios</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span class="nav-text">Productos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="nav-text">Pedidos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span class="nav-text">Facturas</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-text">Configuración</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff" alt="User Avatar" class="user-avatar">
+                <div class="user-info">
+                    <h4 class="user-name">Admin User</h4>
+                    <p class="user-role">Administrador</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="Buscar...">
+                </div>
+            </div>
+            <div class="topbar-right">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="user-menu">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff" alt="User" class="user-avatar-sm">
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h1 class="page-title">Dashboard</h1>
+                <p class="page-description">Bienvenido de nuevo, aquí está tu resumen</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <section class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-icon stat-icon-primary">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-value">2,543</h3>
+                        <p class="stat-label">Usuarios Totales</p>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12.5%</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon stat-icon-success">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-value">1,423</h3>
+                        <p class="stat-label">Pedidos</p>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>8.2%</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon stat-icon-warning">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-value">$45,678</h3>
+                        <p class="stat-label">Ingresos</p>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>15.3%</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon stat-icon-danger">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-value">89.5%</h3>
+                        <p class="stat-label">Tasa de Conversión</p>
+                        <div class="stat-trend trend-down">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>2.1%</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Charts and Tables -->
+            <section class="dashboard-grid">
+                <div class="card chart-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Ventas del Mes</h2>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Actividad Reciente</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <div class="activity-icon activity-icon-success">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Nuevo pedido recibido</h4>
+                                    <p class="activity-time">Hace 5 minutos</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon activity-icon-info">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Nuevo usuario registrado</h4>
+                                    <p class="activity-time">Hace 1 hora</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon activity-icon-warning">
+                                    <i class="fas fa-exclamation"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Inventario bajo</h4>
+                                    <p class="activity-time">Hace 3 horas</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon activity-icon-danger">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Pago rechazado</h4>
+                                    <p class="activity-time">Hace 5 horas</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Orders Table -->
+            <section class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Pedidos Recientes</h2>
+                    <button class="btn btn-primary">Ver Todos</button>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Producto</th>
+                                    <th>Fecha</th>
+                                    <th>Monto</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1234</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="https://ui-avatars.com/api/?name=Juan+Perez&background=random" alt="User" class="table-avatar">
+                                            <span>Juan Pérez</span>
+                                        </div>
+                                    </td>
+                                    <td>MacBook Pro</td>
+                                    <td>28/12/2025</td>
+                                    <td>$2,499</td>
+                                    <td><span class="badge badge-success">Completado</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1235</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="https://ui-avatars.com/api/?name=Maria+Garcia&background=random" alt="User" class="table-avatar">
+                                            <span>María García</span>
+                                        </div>
+                                    </td>
+                                    <td>iPhone 15</td>
+                                    <td>28/12/2025</td>
+                                    <td>$999</td>
+                                    <td><span class="badge badge-warning">Pendiente</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1236</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="https://ui-avatars.com/api/?name=Carlos+Lopez&background=random" alt="User" class="table-avatar">
+                                            <span>Carlos López</span>
+                                        </div>
+                                    </td>
+                                    <td>iPad Air</td>
+                                    <td>27/12/2025</td>
+                                    <td>$599</td>
+                                    <td><span class="badge badge-info">En Proceso</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
