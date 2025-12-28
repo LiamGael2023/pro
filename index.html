@@ -1,331 +1,618 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Panel de Administración Moderno">
-    <title>Dashboard Admin | Panel de Control</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Dashboard - Panel Administrativo</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tabler CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/css/tabler.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <div class="logo">
-                <i class="fas fa-rocket"></i>
-                <span class="logo-text">AdminPro</span>
-            </div>
-            <button class="toggle-btn" id="toggleSidebar">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <nav class="sidebar-nav">
-            <ul class="nav-list">
-                <li class="nav-item active">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-home"></i>
-                        <span class="nav-text">Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-chart-line"></i>
-                        <span class="nav-text">Analíticas</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-users"></i>
-                        <span class="nav-text">Usuarios</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-box"></i>
-                        <span class="nav-text">Productos</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="nav-text">Pedidos</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <span class="nav-text">Facturas</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-text">Configuración</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <div class="user-profile">
-                <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff" alt="User Avatar" class="user-avatar">
-                <div class="user-info">
-                    <h4 class="user-name">Admin User</h4>
-                    <p class="user-role">Administrador</p>
-                </div>
-            </div>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Top Navigation -->
-        <header class="topbar">
-            <div class="topbar-left">
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
+    <div class="page">
+        <!-- Sidebar -->
+        <aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="search" placeholder="Buscar...">
+
+                <h1 class="navbar-brand navbar-brand-autodark">
+                    <a href=".">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-databricks" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 17l9 5l9 -5v-3l-9 5l-9 -5v-3l9 5l9 -5v-3l-9 5l-9 -5l9 -5l5.418 3.01"></path>
+                        </svg>
+                        <span class="navbar-brand-text">AdminPro</span>
+                    </a>
+                </h1>
+
+                <div class="navbar-nav flex-row d-lg-none">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown">
+                            <span class="avatar avatar-sm" style="background-image: url(https://ui-avatars.com/api/?name=Admin+User&background=206bc4&color=fff)"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="sidebar-menu">
+                    <ul class="navbar-nav pt-lg-3">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-home"></i>
+                                </span>
+                                <span class="nav-link-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-chart-line"></i>
+                                </span>
+                                <span class="nav-link-title">Analíticas</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#navbar-users" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-users"></i>
+                                </span>
+                                <span class="nav-link-title">Usuarios</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Lista de Usuarios</a>
+                                <a class="dropdown-item" href="#">Nuevo Usuario</a>
+                                <a class="dropdown-item" href="#">Roles y Permisos</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-package"></i>
+                                </span>
+                                <span class="nav-link-title">Productos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-shopping-cart"></i>
+                                </span>
+                                <span class="nav-link-title">Pedidos</span>
+                                <span class="badge badge-sm bg-red ms-auto">5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-file-invoice"></i>
+                                </span>
+                                <span class="nav-link-title">Facturas</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#navbar-reports" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-file-text"></i>
+                                </span>
+                                <span class="nav-link-title">Reportes</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Ventas</a>
+                                <a class="dropdown-item" href="#">Inventario</a>
+                                <a class="dropdown-item" href="#">Finanzas</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-settings"></i>
+                                </span>
+                                <span class="nav-link-title">Configuración</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="topbar-right">
-                <button class="notification-btn">
-                    <i class="fas fa-bell"></i>
-                    <span class="badge">3</span>
-                </button>
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="user-menu">
-                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff" alt="User" class="user-avatar-sm">
+        </aside>
+
+        <!-- Main Content -->
+        <div class="page-wrapper">
+            <!-- Page header -->
+            <div class="page-header d-print-none">
+                <div class="container-xl">
+                    <div class="row g-2 align-items-center">
+                        <div class="col">
+                            <div class="page-pretitle">Overview</div>
+                            <h2 class="page-title">Dashboard</h2>
+                        </div>
+                        <div class="col-auto ms-auto d-print-none">
+                            <div class="btn-list">
+                                <a href="#" class="btn btn-primary d-none d-sm-inline-block">
+                                    <i class="ti ti-plus"></i>
+                                    Nuevo Registro
+                                </a>
+                                <a href="#" class="btn btn-primary d-sm-none btn-icon">
+                                    <i class="ti ti-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </header>
 
-        <!-- Dashboard Content -->
-        <div class="content-wrapper">
-            <div class="page-header">
-                <h1 class="page-title">Dashboard</h1>
-                <p class="page-description">Bienvenido de nuevo, aquí está tu resumen</p>
+            <!-- Page body -->
+            <div class="page-body">
+                <div class="container-xl">
+                    <!-- Stats Row -->
+                    <div class="row row-deck row-cards">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="subheader">Usuarios Totales</div>
+                                        <div class="ms-auto lh-1">
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown">Últimos 7 días</a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item active" href="#">Últimos 7 días</a>
+                                                    <a class="dropdown-item" href="#">Últimos 30 días</a>
+                                                    <a class="dropdown-item" href="#">Últimos 3 meses</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h1 mb-3">2,543</div>
+                                    <div class="d-flex mb-2">
+                                        <div>Tasa de conversión</div>
+                                        <div class="ms-auto">
+                                            <span class="text-green d-inline-flex align-items-center lh-1">
+                                                12.5% <i class="ti ti-trending-up ms-1"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-primary" style="width: 75%" role="progressbar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="subheader">Pedidos</div>
+                                        <div class="ms-auto lh-1">
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown">Últimos 7 días</a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item active" href="#">Últimos 7 días</a>
+                                                    <a class="dropdown-item" href="#">Últimos 30 días</a>
+                                                    <a class="dropdown-item" href="#">Últimos 3 meses</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h1 mb-3">1,423</div>
+                                    <div class="d-flex mb-2">
+                                        <div>Ventas este mes</div>
+                                        <div class="ms-auto">
+                                            <span class="text-green d-inline-flex align-items-center lh-1">
+                                                8.2% <i class="ti ti-trending-up ms-1"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-success" style="width: 62%" role="progressbar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="subheader">Ingresos</div>
+                                        <div class="ms-auto lh-1">
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown">Últimos 7 días</a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item active" href="#">Últimos 7 días</a>
+                                                    <a class="dropdown-item" href="#">Últimos 30 días</a>
+                                                    <a class="dropdown-item" href="#">Últimos 3 meses</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h1 mb-3">$45,678</div>
+                                    <div class="d-flex mb-2">
+                                        <div>Objetivo mensual</div>
+                                        <div class="ms-auto">
+                                            <span class="text-green d-inline-flex align-items-center lh-1">
+                                                15.3% <i class="ti ti-trending-up ms-1"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-warning" style="width: 91%" role="progressbar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="subheader">Tasa de Conversión</div>
+                                        <div class="ms-auto lh-1">
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown">Últimos 7 días</a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item active" href="#">Últimos 7 días</a>
+                                                    <a class="dropdown-item" href="#">Últimos 30 días</a>
+                                                    <a class="dropdown-item" href="#">Últimos 3 meses</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h1 mb-3">89.5%</div>
+                                    <div class="d-flex mb-2">
+                                        <div>Promedio del sector</div>
+                                        <div class="ms-auto">
+                                            <span class="text-red d-inline-flex align-items-center lh-1">
+                                                2.1% <i class="ti ti-trending-down ms-1"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-info" style="width: 89%" role="progressbar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row row-deck row-cards mt-3">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Ventas del Mes</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div id="chart-sales" style="height: 300px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Actividad Reciente</h3>
+                                </div>
+                                <div class="card-body card-body-scrollable card-body-scrollable-shadow">
+                                    <div class="divide-y">
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <span class="avatar avatar-sm bg-success-lt">
+                                                        <i class="ti ti-check"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="text-truncate">
+                                                        <strong>Nuevo pedido recibido</strong>
+                                                    </div>
+                                                    <div class="text-muted">Hace 5 minutos</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <span class="avatar avatar-sm bg-info-lt">
+                                                        <i class="ti ti-user"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="text-truncate">
+                                                        <strong>Nuevo usuario registrado</strong>
+                                                    </div>
+                                                    <div class="text-muted">Hace 1 hora</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <span class="avatar avatar-sm bg-warning-lt">
+                                                        <i class="ti ti-alert-triangle"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="text-truncate">
+                                                        <strong>Inventario bajo</strong>
+                                                    </div>
+                                                    <div class="text-muted">Hace 3 horas</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <span class="avatar avatar-sm bg-danger-lt">
+                                                        <i class="ti ti-x"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="text-truncate">
+                                                        <strong>Pago rechazado</strong>
+                                                    </div>
+                                                    <div class="text-muted">Hace 5 horas</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <span class="avatar avatar-sm bg-primary-lt">
+                                                        <i class="ti ti-message"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="text-truncate">
+                                                        <strong>Nuevo mensaje de soporte</strong>
+                                                    </div>
+                                                    <div class="text-muted">Hace 6 horas</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table Row -->
+                    <div class="row row-deck row-cards mt-3">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Pedidos Recientes</h3>
+                                </div>
+                                <div class="card-body border-bottom py-3">
+                                    <div class="d-flex">
+                                        <div class="text-muted">
+                                            Mostrar
+                                            <div class="mx-2 d-inline-block">
+                                                <input type="text" class="form-control form-control-sm" value="10" size="3">
+                                            </div>
+                                            registros
+                                        </div>
+                                        <div class="ms-auto text-muted">
+                                            Buscar:
+                                            <div class="ms-2 d-inline-block">
+                                                <input type="text" class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table card-table table-vcenter text-nowrap datatable">
+                                        <thead>
+                                            <tr>
+                                                <th class="w-1">ID</th>
+                                                <th>Cliente</th>
+                                                <th>Producto</th>
+                                                <th>Fecha</th>
+                                                <th>Monto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="text-muted">#1234</span></td>
+                                                <td>
+                                                    <div class="d-flex py-1 align-items-center">
+                                                        <span class="avatar me-2" style="background-image: url(https://ui-avatars.com/api/?name=Juan+Perez&background=random)"></span>
+                                                        <div class="flex-fill">
+                                                            <div class="font-weight-medium">Juan Pérez</div>
+                                                            <div class="text-muted"><a href="#" class="text-reset">juan.perez@email.com</a></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>MacBook Pro</td>
+                                                <td>28/12/2025</td>
+                                                <td>$2,499</td>
+                                                <td>
+                                                    <span class="badge bg-success me-1"></span> Completado
+                                                </td>
+                                                <td class="text-end">
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-edit"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-muted">#1235</span></td>
+                                                <td>
+                                                    <div class="d-flex py-1 align-items-center">
+                                                        <span class="avatar me-2" style="background-image: url(https://ui-avatars.com/api/?name=Maria+Garcia&background=random)"></span>
+                                                        <div class="flex-fill">
+                                                            <div class="font-weight-medium">María García</div>
+                                                            <div class="text-muted"><a href="#" class="text-reset">maria.garcia@email.com</a></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>iPhone 15</td>
+                                                <td>28/12/2025</td>
+                                                <td>$999</td>
+                                                <td>
+                                                    <span class="badge bg-warning me-1"></span> Pendiente
+                                                </td>
+                                                <td class="text-end">
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-edit"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-muted">#1236</span></td>
+                                                <td>
+                                                    <div class="d-flex py-1 align-items-center">
+                                                        <span class="avatar me-2" style="background-image: url(https://ui-avatars.com/api/?name=Carlos+Lopez&background=random)"></span>
+                                                        <div class="flex-fill">
+                                                            <div class="font-weight-medium">Carlos López</div>
+                                                            <div class="text-muted"><a href="#" class="text-reset">carlos.lopez@email.com</a></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>iPad Air</td>
+                                                <td>27/12/2025</td>
+                                                <td>$599</td>
+                                                <td>
+                                                    <span class="badge bg-info me-1"></span> En Proceso
+                                                </td>
+                                                <td class="text-end">
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-edit"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-muted">#1237</span></td>
+                                                <td>
+                                                    <div class="d-flex py-1 align-items-center">
+                                                        <span class="avatar me-2" style="background-image: url(https://ui-avatars.com/api/?name=Ana+Martinez&background=random)"></span>
+                                                        <div class="flex-fill">
+                                                            <div class="font-weight-medium">Ana Martínez</div>
+                                                            <div class="text-muted"><a href="#" class="text-reset">ana.martinez@email.com</a></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>Samsung Galaxy S24</td>
+                                                <td>27/12/2025</td>
+                                                <td>$899</td>
+                                                <td>
+                                                    <span class="badge bg-success me-1"></span> Completado
+                                                </td>
+                                                <td class="text-end">
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-edit"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-muted">#1238</span></td>
+                                                <td>
+                                                    <div class="d-flex py-1 align-items-center">
+                                                        <span class="avatar me-2" style="background-image: url(https://ui-avatars.com/api/?name=Luis+Fernandez&background=random)"></span>
+                                                        <div class="flex-fill">
+                                                            <div class="font-weight-medium">Luis Fernández</div>
+                                                            <div class="text-muted"><a href="#" class="text-reset">luis.fernandez@email.com</a></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>Dell XPS 15</td>
+                                                <td>26/12/2025</td>
+                                                <td>$1,799</td>
+                                                <td>
+                                                    <span class="badge bg-danger me-1"></span> Cancelado
+                                                </td>
+                                                <td class="text-end">
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-icon">
+                                                        <i class="ti ti-edit"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-footer d-flex align-items-center">
+                                    <p class="m-0 text-muted">Mostrando <span>1</span> a <span>5</span> de <span>47</span> registros</p>
+                                    <ul class="pagination m-0 ms-auto">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">
+                                                <i class="ti ti-chevron-left"></i> Anterior
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">
+                                                Siguiente <i class="ti ti-chevron-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Stats Cards -->
-            <section class="stats-grid">
-                <article class="stat-card">
-                    <div class="stat-icon stat-icon-primary">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="stat-value">2,543</h3>
-                        <p class="stat-label">Usuarios Totales</p>
-                        <div class="stat-trend trend-up">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>12.5%</span>
+            <!-- Footer -->
+            <footer class="footer footer-transparent d-print-none">
+                <div class="container-xl">
+                    <div class="row text-center align-items-center flex-row-reverse">
+                        <div class="col-lg-auto ms-lg-auto">
+                            <ul class="list-inline list-inline-dots mb-0">
+                                <li class="list-inline-item"><a href="#" class="link-secondary">Documentación</a></li>
+                                <li class="list-inline-item"><a href="#" class="link-secondary">Licencia</a></li>
+                                <li class="list-inline-item"><a href="#" class="link-secondary">Código Fuente</a></li>
+                            </ul>
                         </div>
-                    </div>
-                </article>
-
-                <article class="stat-card">
-                    <div class="stat-icon stat-icon-success">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="stat-value">1,423</h3>
-                        <p class="stat-label">Pedidos</p>
-                        <div class="stat-trend trend-up">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>8.2%</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="stat-card">
-                    <div class="stat-icon stat-icon-warning">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="stat-value">$45,678</h3>
-                        <p class="stat-label">Ingresos</p>
-                        <div class="stat-trend trend-up">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>15.3%</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="stat-card">
-                    <div class="stat-icon stat-icon-danger">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="stat-value">89.5%</h3>
-                        <p class="stat-label">Tasa de Conversión</p>
-                        <div class="stat-trend trend-down">
-                            <i class="fas fa-arrow-down"></i>
-                            <span>2.1%</span>
-                        </div>
-                    </div>
-                </article>
-            </section>
-
-            <!-- Charts and Tables -->
-            <section class="dashboard-grid">
-                <div class="card chart-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Ventas del Mes</h2>
-                        <div class="card-actions">
-                            <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-container">
-                            <canvas id="salesChart"></canvas>
+                        <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                            <ul class="list-inline list-inline-dots mb-0">
+                                <li class="list-inline-item">
+                                    Copyright &copy; 2025
+                                    <a href="#" class="link-secondary">AdminPro</a>.
+                                    Todos los derechos reservados.
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title">Actividad Reciente</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul class="activity-list">
-                            <li class="activity-item">
-                                <div class="activity-icon activity-icon-success">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                                <div class="activity-content">
-                                    <h4 class="activity-title">Nuevo pedido recibido</h4>
-                                    <p class="activity-time">Hace 5 minutos</p>
-                                </div>
-                            </li>
-                            <li class="activity-item">
-                                <div class="activity-icon activity-icon-info">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                                <div class="activity-content">
-                                    <h4 class="activity-title">Nuevo usuario registrado</h4>
-                                    <p class="activity-time">Hace 1 hora</p>
-                                </div>
-                            </li>
-                            <li class="activity-item">
-                                <div class="activity-icon activity-icon-warning">
-                                    <i class="fas fa-exclamation"></i>
-                                </div>
-                                <div class="activity-content">
-                                    <h4 class="activity-title">Inventario bajo</h4>
-                                    <p class="activity-time">Hace 3 horas</p>
-                                </div>
-                            </li>
-                            <li class="activity-item">
-                                <div class="activity-icon activity-icon-danger">
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <div class="activity-content">
-                                    <h4 class="activity-title">Pago rechazado</h4>
-                                    <p class="activity-time">Hace 5 horas</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Recent Orders Table -->
-            <section class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Pedidos Recientes</h2>
-                    <button class="btn btn-primary">Ver Todos</button>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Cliente</th>
-                                    <th>Producto</th>
-                                    <th>Fecha</th>
-                                    <th>Monto</th>
-                                    <th>Estado</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#1234</td>
-                                    <td>
-                                        <div class="user-cell">
-                                            <img src="https://ui-avatars.com/api/?name=Juan+Perez&background=random" alt="User" class="table-avatar">
-                                            <span>Juan Pérez</span>
-                                        </div>
-                                    </td>
-                                    <td>MacBook Pro</td>
-                                    <td>28/12/2025</td>
-                                    <td>$2,499</td>
-                                    <td><span class="badge badge-success">Completado</span></td>
-                                    <td>
-                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#1235</td>
-                                    <td>
-                                        <div class="user-cell">
-                                            <img src="https://ui-avatars.com/api/?name=Maria+Garcia&background=random" alt="User" class="table-avatar">
-                                            <span>María García</span>
-                                        </div>
-                                    </td>
-                                    <td>iPhone 15</td>
-                                    <td>28/12/2025</td>
-                                    <td>$999</td>
-                                    <td><span class="badge badge-warning">Pendiente</span></td>
-                                    <td>
-                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#1236</td>
-                                    <td>
-                                        <div class="user-cell">
-                                            <img src="https://ui-avatars.com/api/?name=Carlos+Lopez&background=random" alt="User" class="table-avatar">
-                                            <span>Carlos López</span>
-                                        </div>
-                                    </td>
-                                    <td>iPad Air</td>
-                                    <td>27/12/2025</td>
-                                    <td>$599</td>
-                                    <td><span class="badge badge-info">En Proceso</span></td>
-                                    <td>
-                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+            </footer>
         </div>
-    </main>
+    </div>
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Tabler Core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/js/tabler.min.js"></script>
+
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>

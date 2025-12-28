@@ -1,71 +1,72 @@
-# 🚀 Admin Dashboard Pro
+# 📊 AdminPro - Panel Administrativo Profesional
 
-Plantilla administrativa moderna y responsive con las últimas tendencias en diseño web.
+Plantilla administrativa profesional y empresarial basada en **Tabler.io**, el framework de dashboards más moderno y completo.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![Tabler](https://img.shields.io/badge/Tabler-206bc4?style=flat-square&logo=tabler&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
+![ApexCharts](https://img.shields.io/badge/ApexCharts-00E396?style=flat-square&logo=apexcharts&logoColor=white)
 
 ## ✨ Características
 
-### 🎨 Diseño Moderno
-- **Glassmorphism**: Efectos de vidrio esmerilado con backdrop blur
-- **Gradientes Modernos**: Paleta de colores vibrante y profesional
-- **Animaciones Suaves**: Transiciones y efectos fluidos
-- **Dark/Light Mode**: Tema oscuro y claro intercambiable
+### 🎯 Diseño Profesional y Serio
+- **Tabler.io Framework**: Framework de administración de código abierto, profesional y probado
+- **Diseño Limpio**: Interfaz minimalista y enfocada en la productividad
+- **Bootstrap 5**: Construido sobre Bootstrap para máxima compatibilidad
+- **Totalmente Responsive**: Optimizado para escritorio, tablet y móvil
 
-### 📱 Responsive Design
-- **Mobile First**: Optimizado para dispositivos móviles
-- **Breakpoints Inteligentes**: Adaptación perfecta en todos los tamaños
-- **Touch Friendly**: Interacciones optimizadas para pantallas táctiles
-
-### 🛠️ Componentes Incluidos
-- ✅ Sidebar navegable con iconos
-- ✅ Barra superior con búsqueda
-- ✅ Tarjetas estadísticas animadas
-- ✅ Gráficos interactivos con Chart.js
-- ✅ Tablas de datos responsivas
-- ✅ Lista de actividades
-- ✅ Sistema de notificaciones
-- ✅ Badges y estados
+### 📊 Componentes Empresariales
+- ✅ Sidebar navegable con menús desplegables
+- ✅ Header con breadcrumbs y acciones rápidas
+- ✅ Tarjetas estadísticas con métricas clave
+- ✅ Gráficos profesionales con ApexCharts
+- ✅ Tablas de datos con búsqueda y paginación
+- ✅ Lista de actividades en tiempo real
+- ✅ Sistema de notificaciones (toasts)
+- ✅ Badges de estado profesionales
 
 ### 🚀 Tecnologías
 
-#### HTML5
-- Semántica moderna
-- Estructura accesible
-- Meta tags optimizados
+#### Tabler.io
+- Framework de administración profesional
+- +500 componentes UI prediseñados
+- Sistema de diseño consistente
+- Iconos Tabler integrados
 
-#### CSS3
-- CSS Variables (Custom Properties)
-- Flexbox y Grid Layout
-- Backdrop Filter para glassmorphism
-- Animaciones y transiciones
-- Media queries responsivas
+#### Bootstrap 5
+- Grid system responsive
+- Componentes interactivos
+- Utilidades CSS
+- JavaScript plugins
 
-#### JavaScript ES6+
-- Vanilla JavaScript puro
-- Event Delegation
-- Intersection Observer API
-- LocalStorage para preferencias
-- Chart.js para gráficos
+#### ApexCharts
+- Gráficos interactivos modernos
+- Altamente personalizables
+- Responsive por defecto
+- Animaciones fluidas
+
+#### HTML5 & JavaScript ES6+
+- Código semántico y accesible
+- JavaScript moderno vanilla
+- No requiere frameworks adicionales
+- Performance optimizado
 
 ## 📦 Estructura del Proyecto
 
 ```
 admin-dashboard/
-├── index.html          # Página principal
+├── index.html          # Dashboard principal
 ├── css/
-│   └── styles.css      # Estilos principales
+│   └── styles.css      # Personalizaciones CSS
 ├── js/
 │   └── main.js         # Funcionalidad JavaScript
-└── README.md           # Documentación
+├── README.md           # Documentación
+└── .gitignore         # Archivos ignorados
 ```
 
 ## 🚀 Inicio Rápido
 
-### 1. Clonar o Descargar
+### 1. Clonar el Repositorio
 
 ```bash
 git clone [url-del-repositorio]
@@ -74,149 +75,202 @@ cd admin-dashboard
 
 ### 2. Abrir en Navegador
 
-Simplemente abre `index.html` en tu navegador favorito. No requiere instalación ni compilación.
+No requiere instalación ni compilación. Simplemente abre `index.html`:
 
 ```bash
-# Con Live Server (si tienes instalado)
-live-server
-
-# O simplemente abre el archivo
+# Abre directamente el archivo
 open index.html
+
+# O con un servidor local
+python -m http.server 8000
+# Luego visita: http://localhost:8000
 ```
+
+### 3. Personalizar
+
+Todo está listo para personalizar según tus necesidades.
 
 ## 🎨 Personalización
 
-### Cambiar Colores
+### Cambiar el Logo
 
-Edita las variables CSS en `css/styles.css`:
+Edita en `index.html`:
+
+```html
+<h1 class="navbar-brand navbar-brand-autodark">
+    <a href=".">
+        <!-- Tu logo SVG aquí -->
+        <span class="navbar-brand-text">TuEmpresa</span>
+    </a>
+</h1>
+```
+
+### Modificar Colores
+
+Los colores se gestionan a través de Tabler. Para cambiar el color principal, puedes sobrescribir en `css/styles.css`:
 
 ```css
 :root {
-    --primary: #6366f1;      /* Color principal */
-    --success: #10b981;      /* Color éxito */
-    --warning: #f59e0b;      /* Color advertencia */
-    --danger: #ef4444;       /* Color peligro */
+    --tblr-primary: #tu-color;
 }
 ```
 
-### Modificar el Logo
+### Agregar Nuevas Páginas de Navegación
 
-En `index.html`, busca la sección del logo:
+En `index.html`, dentro del `<ul class="navbar-nav">`:
 
 ```html
-<div class="logo">
-    <i class="fas fa-rocket"></i>
-    <span class="logo-text">TuNombre</span>
-</div>
+<li class="nav-item">
+    <a class="nav-link" href="tu-pagina.html">
+        <span class="nav-link-icon">
+            <i class="ti ti-tu-icono"></i>
+        </span>
+        <span class="nav-link-title">Tu Página</span>
+    </a>
+</li>
 ```
 
-### Agregar Nuevas Páginas
+### Personalizar Gráficos
 
-1. Crea un nuevo archivo HTML
-2. Copia la estructura base de `index.html`
-3. Modifica el contenido del `<main>`
-4. Actualiza la navegación en el sidebar
-
-## 📊 Gráficos
-
-Los gráficos utilizan **Chart.js**. Para personalizar:
+En `js/main.js`, modifica las opciones de ApexCharts:
 
 ```javascript
-// En js/main.js
-const salesChart = new Chart(ctx, {
-    type: 'line',  // Cambia el tipo: line, bar, pie, doughnut
-    data: {
-        labels: ['Ene', 'Feb', 'Mar', ...],
-        datasets: [{
-            data: [12500, 19000, 15000, ...]
-        }]
-    }
-});
+const options = {
+    series: [{
+        name: 'Serie',
+        data: [tus, datos, aquí]
+    }],
+    chart: {
+        type: 'area', // line, bar, pie, donut, etc.
+        height: 300
+    },
+    // Más opciones...
+};
 ```
 
-## 🎯 Funcionalidades JavaScript
+## 📊 Componentes Incluidos
 
-### Toggle Sidebar
-```javascript
-// Mobile menu toggle
-menuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-});
-```
+### Dashboard Principal
+- **4 Tarjetas de Estadísticas**: Con métricas, tendencias y barras de progreso
+- **Gráfico de Ventas**: Área chart interactivo con datos mensuales
+- **Feed de Actividades**: Lista scrolleable con eventos recientes
+- **Tabla de Pedidos**: Con búsqueda, paginación y acciones
 
-### Cambiar Tema
-```javascript
-// Dark/Light mode
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-theme');
-});
-```
+### Navegación
+- **Sidebar Vertical**: Con menús simples y desplegables
+- **Header Responsive**: Con breadcrumbs y botones de acción
+- **Menús Dropdown**: Para filtros de fecha y acciones
 
-### Mostrar Notificaciones
-```javascript
-// Usar la función global
-window.adminDashboard.showNotification('Tu mensaje aquí', 'info');
-```
+### Interactividad
+- **Búsqueda en Tablas**: Filtrado en tiempo real
+- **Contadores Animados**: Números que se animan al cargar
+- **Notificaciones Toast**: Sistema de alertas elegante
+- **Navegación Activa**: Estados visuales claros
 
 ## 🌐 Navegadores Compatibles
 
-- ✅ Chrome (últimas 2 versiones)
+- ✅ Chrome/Edge (últimas 2 versiones)
 - ✅ Firefox (últimas 2 versiones)
 - ✅ Safari (últimas 2 versiones)
-- ✅ Edge (últimas 2 versiones)
 - ✅ Opera (últimas 2 versiones)
 
-## 📱 Responsive Breakpoints
+## 📱 Breakpoints Responsive
 
-- **Desktop**: > 1024px
-- **Tablet**: 768px - 1024px
+- **Desktop**: ≥ 992px
+- **Tablet**: 768px - 991px
 - **Mobile**: < 768px
-- **Small Mobile**: < 480px
 
-## 🎨 Paleta de Colores
+El sidebar colapsa automáticamente en móvil con un botón hamburguesa.
 
-### Dark Theme (Default)
-- Background: `#0f172a` → `#1e293b`
-- Text: `#f1f5f9`
-- Primary: `#6366f1`
-- Accent: `#8b5cf6`
+## 🎯 Casos de Uso
 
-### Light Theme
-- Background: `#f8fafc` → `#ffffff`
-- Text: `#0f172a`
-- Primary: `#6366f1`
-- Accent: `#8b5cf6`
+Esta plantilla es perfecta para:
 
-## 🔧 Mejoras Futuras
+- **Dashboards Corporativos**: Monitoreo de KPIs empresariales
+- **Paneles de Administración**: Gestión de contenido y usuarios
+- **Sistemas ERP/CRM**: Interfaces de gestión empresarial
+- **Plataformas SaaS**: Backends de aplicaciones web
+- **Analítica de Datos**: Visualización de métricas y reportes
 
-- [ ] Sistema de autenticación
-- [ ] Integración con API REST
-- [ ] Más tipos de gráficos
-- [ ] Formularios avanzados
-- [ ] Exportación de datos
-- [ ] Múltiples layouts
-- [ ] Temas personalizables
-- [ ] PWA (Progressive Web App)
+## 📚 Recursos
+
+### Tabler.io
+- [Documentación Oficial](https://tabler.io/docs)
+- [Componentes](https://preview.tabler.io/docs/components.html)
+- [Iconos Tabler](https://tabler-icons.io/)
+
+### ApexCharts
+- [Documentación](https://apexcharts.com/docs/installation/)
+- [Ejemplos](https://apexcharts.com/javascript-chart-demos/)
+
+### Bootstrap 5
+- [Documentación](https://getbootstrap.com/docs/5.0)
+- [Componentes](https://getbootstrap.com/docs/5.0/components/)
+
+## 🔧 Próximas Funcionalidades
+
+- [ ] Modo oscuro/claro toggle
+- [ ] Más páginas de ejemplo (Usuarios, Productos, etc.)
+- [ ] Formularios avanzados con validación
+- [ ] Modales y diálogos
+- [ ] Sistema de notificaciones avanzado
+- [ ] Integración con APIs REST
+- [ ] Autenticación de ejemplo
+- [ ] Exportación de datos (PDF, Excel)
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Puedes usarlo libremente en proyectos personales y comerciales.
+Este proyecto utiliza:
+- **Tabler.io**: MIT License
+- **Bootstrap 5**: MIT License
+- **ApexCharts**: MIT License
 
-## 👨‍💻 Autor
+El código personalizado de este proyecto también está bajo Licencia MIT.
 
-Desarrollado con ❤️ usando las últimas tecnologías web.
+## 👨‍💻 Desarrollo
 
-## 🙏 Agradecimientos
+### Stack Tecnológico
+```
+Frontend:
+- HTML5 (Semántico)
+- Tabler.io Framework
+- Bootstrap 5.3
+- ApexCharts
+- Vanilla JavaScript ES6+
 
-- [Font Awesome](https://fontawesome.com/) - Iconos
-- [Google Fonts](https://fonts.google.com/) - Tipografía Inter
-- [Chart.js](https://www.chartjs.org/) - Gráficos
-- [UI Avatars](https://ui-avatars.com/) - Avatares generados
+Dependencias:
+- Tabler Core CSS/JS (CDN)
+- Tabler Icons (CDN)
+- ApexCharts (CDN)
+- Bootstrap 5 (incluido en Tabler)
+```
+
+### Sin Dependencias de Build
+Esta plantilla **NO requiere**:
+- ❌ Node.js
+- ❌ npm/yarn
+- ❌ Webpack/Vite
+- ❌ Compilación
+- ❌ Instalación de paquetes
+
+Todo funciona directamente en el navegador.
+
+## 🙏 Créditos
+
+- [Tabler.io](https://tabler.io/) - Framework de administración
+- [Bootstrap](https://getbootstrap.com/) - Framework CSS
+- [ApexCharts](https://apexcharts.com/) - Librería de gráficos
+- [Tabler Icons](https://tabler-icons.io/) - Set de iconos
 
 ## 📞 Soporte
 
-Si tienes preguntas o sugerencias, no dudes en abrir un issue o contactar.
+Para dudas sobre:
+- **Tabler.io**: [GitHub Issues](https://github.com/tabler/tabler/issues)
+- **Bootstrap**: [Documentación oficial](https://getbootstrap.com/)
+- **ApexCharts**: [Documentación oficial](https://apexcharts.com/)
 
 ---
 
-⭐ Si te gusta este proyecto, dale una estrella en GitHub!
+⭐ **Si este proyecto te es útil, considera darle una estrella en GitHub**
+
+Desarrollado con enfoque en profesionalismo y productividad empresarial.
