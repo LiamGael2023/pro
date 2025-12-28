@@ -1,12 +1,21 @@
 /* ==========================================
    Personalizaciones para Tabler Admin Template
+   Layout: Horizontal Navbar
    ========================================== */
+
+/* Navbar horizontal superior */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e6e7e9;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
 
 /* Logo personalizado */
 .navbar-brand-text {
     margin-left: 0.5rem;
     font-weight: 600;
     font-size: 1.25rem;
+    color: #1e293b;
 }
 
 /* Mejorar el icono del logo */
@@ -14,27 +23,103 @@
     color: #206bc4;
 }
 
-/* Ajustes para el sidebar */
-.navbar-vertical .navbar-nav {
-    padding-bottom: 1rem;
+/* Navegación horizontal */
+.navbar-nav .nav-item {
+    margin: 0;
 }
 
-/* Mejorar hover en items de navegación */
-.navbar-vertical .nav-link:hover {
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    color: #626976;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 0.375rem;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #f8f9fa;
+    color: #206bc4;
+}
+
+.navbar-nav .nav-item.active .nav-link {
     background-color: rgba(32, 107, 196, 0.1);
-}
-
-/* Mejorar el estado activo */
-.navbar-vertical .nav-item.active .nav-link {
-    background-color: rgba(32, 107, 196, 0.15);
     color: #206bc4;
     font-weight: 600;
 }
 
-/* Personalización de badges en la navegación */
-.navbar-vertical .badge {
+/* Iconos en el navbar */
+.nav-link-icon {
+    margin-right: 0.5rem;
+}
+
+/* Badges en navegación */
+.navbar-nav .badge {
     font-size: 0.65rem;
     padding: 0.25em 0.5em;
+}
+
+/* Dropdown menu mejorado */
+.dropdown-menu {
+    border: 1px solid #e6e7e9;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    transition: all 0.15s ease;
+    border-radius: 0.375rem;
+    margin: 0.125rem 0.5rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item.active {
+    background-color: #206bc4;
+    color: white;
+}
+
+/* Avatar en navbar */
+.navbar .avatar {
+    border: 2px solid #e6e7e9;
+}
+
+/* Notificaciones dropdown */
+.dropdown-menu-card {
+    min-width: 350px;
+}
+
+.list-group-item {
+    border: none;
+    padding: 0.75rem 1rem;
+}
+
+.status-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #adb5bd;
+    border-radius: 50%;
+}
+
+.status-dot-animated {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Ajuste del contenedor principal (sin margin-left del sidebar) */
+.page-wrapper {
+    margin-left: 0 !important;
 }
 
 /* Mejorar espaciado en cards de estadísticas */
@@ -179,6 +264,7 @@
 .footer {
     padding: 1.5rem 0;
     font-size: 0.875rem;
+    margin-top: 3rem;
 }
 
 .footer .list-inline-item {
@@ -211,26 +297,6 @@
     font-weight: 700;
     color: #1e293b;
     margin: 0;
-}
-
-/* Dropdown mejorado */
-.dropdown-menu {
-    border: 1px solid #e6e7e9;
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.075);
-}
-
-.dropdown-item {
-    padding: 0.5rem 1rem;
-    transition: all 0.15s ease;
-}
-
-.dropdown-item:hover {
-    background-color: #f8f9fa;
-}
-
-.dropdown-item.active {
-    background-color: #206bc4;
-    color: white;
 }
 
 /* Botones principales */
@@ -292,6 +358,10 @@
 
     .table {
         font-size: 0.875rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
     }
 }
 
@@ -367,7 +437,7 @@
 
 /* Print styles */
 @media print {
-    .navbar-vertical,
+    .navbar,
     .page-header .btn-list,
     .footer {
         display: none !important;
@@ -375,5 +445,28 @@
 
     .page-wrapper {
         margin-left: 0 !important;
+    }
+}
+
+/* Navbar sticky mejorado */
+.navbar.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+/* Mejora para dropdowns en navbar */
+.navbar .dropdown-menu {
+    animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

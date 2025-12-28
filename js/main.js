@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Table Search Functionality
     // ==========================================
 
-    const tableSearch = document.querySelector('.card-body.border-bottom input[type="text"]');
+    const tableSearch = document.getElementById('table-search');
 
     if (tableSearch) {
         tableSearch.addEventListener('input', function(e) {
@@ -304,14 +304,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================
-    // Responsive Sidebar Toggle
+    // Responsive Navbar Toggle
     // ==========================================
 
     const navbarToggler = document.querySelector('.navbar-toggler');
 
     if (navbarToggler) {
         navbarToggler.addEventListener('click', function() {
-            console.log('Sidebar toggled');
+            console.log('Mobile menu toggled');
         });
     }
 
