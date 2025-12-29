@@ -404,4 +404,165 @@ document.addEventListener('DOMContentLoaded', function() {
         showToast('¡Bienvenido al Panel Administrativo!', 'success');
     }, 500);
 
+    // ==========================================
+    // Smooth Scroll para enlaces internos
+    // ==========================================
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+
+    // ==========================================
+    // Auto-hide navbar on scroll down (opcional)
+    // ==========================================
+
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    let scrollTimeout;
+
+    window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Solo en desktop y si hay suficiente scroll
+            if (window.innerWidth > 768 && scrollTop > 100) {
+                if (scrollTop > lastScrollTop) {
+                    // Scroll down - opcional: ocultar navbar
+                    // navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scroll up
+                    navbar.style.transform = 'translateY(0)';
+                }
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, 100);
+    }, false);
+
+    // ==========================================
+    // Tooltips initialization (Bootstrap)
+    // ==========================================
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    if (typeof bootstrap !== 'undefined') {
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl =>
+            new bootstrap.Tooltip(tooltipTriggerEl)
+        );
+    }
+
+    // ==========================================
+    // Loading state for buttons
+    // ==========================================
+
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            if (this.classList.contains('demo-loading')) {
+                e.preventDefault();
+                this.classList.add('loading');
+
+                setTimeout(() => {
+                    this.classList.remove('loading');
+                    showToast('Acción completada exitosamente', 'success');
+                }, 2000);
+            }
+        });
+    });
+
+    // ==========================================
+    // Dropdown auto-close on click outside
+    // ==========================================
+
+    document.addEventListener('click', function(event) {
+        const dropdowns = document.querySelectorAll('.dropdown-menu.show');
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.previousElementSibling;
+            if (toggle && !toggle.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    // ==========================================
+    // Card expand/collapse (para cards con mucho contenido)
+    // ==========================================
+
+    const expandableCards = document.querySelectorAll('[data-card-expand]');
+    expandableCards.forEach(card => {
+        const button = document.createElement('button');
+        button.className = 'btn btn-sm btn-icon position-absolute top-0 end-0 m-2';
+        button.innerHTML = '<i class="ti ti-arrows-maximize"></i>';
+        button.title = 'Expandir';
+
+        button.addEventListener('click', function() {
+            card.classList.toggle('card-fullscreen');
+            this.querySelector('i').classList.toggle('ti-arrows-maximize');
+            this.querySelector('i').classList.toggle('ti-arrows-minimize');
+        });
+
+        card.style.position = 'relative';
+        card.appendChild(button);
+    });
+
+    // ==========================================
+    // Copy to clipboard functionality
+    // ==========================================
+
+    window.copyToClipboard = function(text) {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Copiado al portapapeles', 'info');
+            });
+        }
+    };
+
+    // ==========================================
+    // Stats card number formatting with animation
+    // ==========================================
+
+    const formatNumber = (num) => {
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1) + 'M';
+        } else if (num >= 1000) {
+            return (num / 1000).toFixed(1) + 'K';
+        }
+        return num.toString();
+    };
+
+    // ==========================================
+    // Enhanced keyboard navigation
+    // ==========================================
+
+    document.addEventListener('keydown', function(e) {
+        // Escape key closes dropdowns
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.dropdown-menu.show').forEach(dropdown => {
+                dropdown.classList.remove('show');
+            });
+        }
+
+        // Ctrl/Cmd + K for quick search (si existe)
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            const searchInput = document.querySelector('#table-search');
+            if (searchInput) {
+                searchInput.focus();
+                searchInput.select();
+            }
+        }
+    });
+
 });
