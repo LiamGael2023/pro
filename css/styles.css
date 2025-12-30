@@ -9,6 +9,7 @@
 
 :root {
     --custom-primary: #206bc4;
+    --custom-purple: #8b5cf6;
     --custom-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     --custom-shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08);
     --custom-transition: all 0.2s ease-in-out;
@@ -23,28 +24,50 @@ html {
    ================================================== */
 
 .navbar {
-    background: #ffffff;
-    border-bottom: 1px solid #e6e9ee;
-    box-shadow: var(--custom-shadow);
+    background: var(--custom-purple);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
 }
 
 .navbar-brand {
     font-size: 1.25rem;
     font-weight: 700;
+    color: #ffffff !important;
+}
+
+.navbar-brand a {
+    color: #ffffff !important;
+}
+
+.navbar-brand i {
+    color: #ffffff !important;
 }
 
 .nav-link {
     font-weight: 500;
     transition: var(--custom-transition);
+    color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .nav-item:hover .nav-link {
-    color: var(--custom-primary);
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.375rem;
 }
 
 .nav-item.active .nav-link {
-    color: var(--custom-primary);
+    color: #ffffff !important;
     font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 0.375rem;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* ==================================================
